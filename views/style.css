@@ -1,0 +1,53 @@
+
+table { background-color: white !important; }
+
+
+.logo {
+	position:relative; 
+	top:0px; 
+	left:45%; 
+	height:100px; 
+	width:170px;
+	}
+
+@media (max-width: 675px)
+{
+ .logo {
+ 	left: 35;
+ 	top:3px;
+	height:70px; 
+	width:120px;
+ }
+}
+
+main .container {
+    position: absolute;
+    top: 110px;
+    left:100px;
+    padding-right: 80px;
+    } 
+
+@media (max-width: 675px)
+{
+ main .container {
+ 	left:0px;
+ 	padding-right:0px;
+ }
+}
+
+@media (max-width: 900px)
+{
+ main .container {
+ 	left:60px;
+ 	padding-right: 20px;
+ }
+}
+
+.footer {
+	padding-top: 10px;
+}
+
+.card-text {
+    color: black;
+}
+

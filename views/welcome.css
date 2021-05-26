@@ -1,0 +1,50 @@
+body, html{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+section {
+	background-color: black !important;
+	background-image: url(welcome.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+section{
+	background-color: black !important;
+	padding: 4.5%;
+}
+
+.button2{
+	margin-top: 30%;
+	margin-left: 38%;
+	border: none;
+} 
+
+.button{
+	margin-top: 5%;
+	margin-left: 38%;
+	border: none;
+} 
+
+.btn-info{
+	background-color: rgb(2, 49, 102) !important;
+	border: none !important;
+}
+
+.btn-info:hover{
+	background-color: rgba(0, 38, 70, 0.767) !important
+}
+.modal-body{
+	font-family: sans-serif;
+}
+
+.one{
+	float: inline-end;
+}
+
+.two{
+	float: inline-start;
+}

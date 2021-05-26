@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Trivia Chat Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="welcome.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+
+  <!-- Trigger the modal with a button -->
+
+  <section>
+
+  <div class="button2" style="margin-left: 18%;">
+  <button type="button" class="btn btn-info btn-lg" id="login" data-toggle="modal" data-target="#logIn">SIGN IN</button>
+​	</div>
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="logIn" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">SIGN IN</h4>
+        </div>
+        <div class="modal-body">
+			<div class="container-fluid">
+
+			<form class="p-4" method="POST" action="/user/signin">
+
+				<div class="mb-3">
+					<label for="exampleInputEmail1" class="form-label">Email address</label><br>
+					<input type="email" name="email" class="form-control" placeholder="Enter Your Email Address" id="exampleInputEmail1" aria-describedby="emailHelp">	
+				  </div><br>
+
+				  <div class="mb-3">
+					<label for="exampleInputPassword1" class="form-label">Password</label>
+					<input type="password" name="password" class="form-control" placeholder="Enter Your Password" id="exampleInputPassword1">
+				  </div>
+
+				<div class="mb-3">
+				  <div class="form-check">
+					<input type="checkbox" class="form-check-input" id="dropdownCheck">
+					<label class="form-check-label" for="dropdownCheck">
+					  Remember me
+					</label>
+				  </div>
+				</div><br>
+
+				<button type="submit" class="btn btn-primary py-3">Sign in</button>
+
+			  </form>
+			</div>
+        </div>
+
+        <div class="modal-footer">
+
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item one" href="#">New around here? Sign up</a>
+			<a class="dropdown-item two" href="#">Forgot password?</a>
+		
+        </div>
+      </div>
+    </div>
+  </div> 
+
+<!--------------------SignUp button----------------------->
+<div class="dropdown-divider"></div>
+
+<div class="button" style="margin-left: 18%;">
+	<button type="button" class="btn btn-info btn-lg" id="login" data-toggle="modal" data-target="#signup">SIGN UP</button>
+  ​	</div>
+  
+<div class="modal fade" id="signup" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">SIGN UP</h4>
+        </div>
+        <div class="modal-body">
+			<div class="container-fluid">
+
+				<form class="p-4" id="signup-form" action="/user/signup" method="POST">
+					<div class="mb-3">
+						<label class="col-sm-2 col-form-label" for="autoSizingInput">Name</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="name" id="autoSizingInput" placeholder="Enter Your Name"><br>
+						</div>
+					  </div>
+					  <div class="mb-3">
+						<label class="col-sm-2 col-form-label" for="autoSizingInput">Username</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="username" id="autoSizingInput" placeholder="Enter Your Username"><br>
+						</div>
+					  </div>
+					<div class="mb-3">
+					  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+					  <div class="col-sm-10">
+						<input type="email" class="form-control" name="email" id="inputEmail3" placeholder="Enter Your Email Id"><br>
+					  </div>
+					</div>
+					<div class="mb-3">
+					  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+					  <div class="col-sm-10">
+						<input type="password" class="form-control" name="password" id="inputPassword3" placeholder="create a Password"><br>
+					  </div>
+					</div>
+					<div class="mb-3">
+						<label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>
+						<div class="col-sm-10">
+						  <input type="password" class="form-control" name="confirmPassword" id="inputPassword3" placeholder="Re-enter Your Password"><br><br>
+						</div>
+					  </div>
+					
+					
+					<button type="submit" class="btn btn-primary w-25">Sign In</button>
+				  </form>
+			</div>
+        </div>
+
+        <div class="modal-footer">
+
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item one" href="#">Already a member? Sign In</a>
+			<a class="dropdown-item two" href="#">Forgot password?</a>
+		
+        </div>
+      </div>
+    </div>
+  </div> 
+
+</body>
+
+</html>
+
+​
+
