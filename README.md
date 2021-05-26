@@ -1,4 +1,4 @@
-Trivial Chat
+# Trivial Chat
 
 ## Inspiration
 Trivial Chat is a website that was created to connect people in the same community/neighborhood together. Today, with covid-19 and lockdown restriction, people have become isolated and this can lead to depression and other mental illnesses. Therefore, as a team, we decided to create a platform where people in the same community will be able to communicate and also avail other financial and informative features at the same time.
