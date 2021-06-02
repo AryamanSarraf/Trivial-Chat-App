@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AryamanSarraf/Neighbourhood-Hack.git"
+    "url": "git+https://github.com/AryamanSarraf/Trivial-Chat-App.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AryamanSarraf/Neighbourhood-Hack/issues"
+    "url": "https://github.com/AryamanSarraf/Trivial-Chat-App/issues"
   },
-  "homepage": "https://github.com/AryamanSarraf/Neighbourhood-Hack#readme",
+  "homepage": "https://github.com/AryamanSarraf/Trivial-Chat-App#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.0.0",
