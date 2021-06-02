@@ -1,10 +1,10 @@
 export class MyError {
     errors: string[];
     constructor(){
-        this.errors = []
+        this.errors = [];
     }
     add(err: string){
-        this.errors.push(err)
+        this.errors.push(err);
     }
 }
 

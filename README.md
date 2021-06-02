@@ -1,4 +1,4 @@
-# Trivial Chat
+# Neighbourhood-Hack
 
 ## Inspiration
 Trivial Chat is a website that was created to connect people in the same community/neighborhood together. Today, with covid-19 and lockdown restriction, people have become isolated and this can lead to depression and other mental illnesses. Therefore, as a team, we decided to create a platform where people in the same community will be able to communicate and also avail other financial and informative features at the same time.
@@ -16,7 +16,7 @@ you will `nodejs` and `mongodb` installed in your local machine to run this app.
 ## run the app
 
 ```
-git clone https://github.com/AryamanSarraf/Trivial-Chat-App.git
+git clone https://github.com/AryamanSarraf/Trivial-Chat.git
 ```
 
 ```
@@ -35,7 +35,16 @@ now, open your browser and go to [localhost:5000](http://localhost:5000/)
 app should be runing.
 
 ## Contributors ✨
- 
-Vivek Kumar
+     
+Thanks goes to these wonderful people.
+     
+<table>
+  <tr>
+   <td>
+   <a href="https://github.com/AryamanSarraf/Trivial-Chat/graphs/contributors">
+     <img src="https://contrib.rocks/image?repo=AryamanSarraf/Trivial-Chat" />
+  </a>
+  </td>
+  </tr>
+</table>
 
-Aryaman Sarraf

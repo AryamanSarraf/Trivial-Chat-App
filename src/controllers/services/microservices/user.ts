@@ -27,7 +27,9 @@ export const saveUserToDatabase = (
                 newUser.password = hash;
                 newUser
                   .save()
-                  .then((user: any) => { })
+                  .then((user: any) => {
+                    console.log("user is saved to database", user);
+                  })
                   .catch((err: any) => console.log(err));
               }
             });

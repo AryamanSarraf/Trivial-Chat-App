@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { resolve, join } from "path";
-import { io } from "../../server";
 //TODO use Job class to create jobs and save to database.
 //import { Job } from "./Entity/job";
 import { Jobs } from "../modals/job";
@@ -13,33 +12,60 @@ export interface IBody {
 }
 
 export const handleGetIndex = (req: Request, res: Response) => {
-  res.sendFile(
-    join(
-      resolve(__dirname.replace("/src/controllers", "/views"), "welcome.html")
-    )
-  );
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("\\src\\controllers", "\\views"),
+          "welcome.html"
+        )
+      )
+    );
+  } else {
+    res.sendFile(
+      join(
+        resolve(__dirname.replace("/src/controllers", "/views"), "welcome.html")
+      )
+    );
+  }
 };
 
 export const handleGetMessage = (req: Request, res: Response) => {
-  io.on("connection", (socket) => {
-    socket.on("user-join", (msg) => {
-      socket.broadcast.emit("new-user-join", msg);
-    });
-    socket.on("chat-message", (msg) => {
-      socket.broadcast.emit("new-chat-message", msg);
-    });
-  });
-  res.sendFile(
-    join(
-      resolve(__dirname.replace("/src/controllers", "/views"), "messages.html")
-    )
-  );
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("\\src\\controllers", "\\views"),
+          "messages.html"
+        )
+      )
+    );
+  } else {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("/src/controllers", "/views"),
+          "messages.html"
+        )
+      )
+    );
+  }
 };
 
 export const handleGetJobs = (req: Request, res: Response) => {
-  res.sendFile(
-    join(resolve(__dirname.replace("/src/controllers", "/views"), "jobs.html"))
-  );
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(
+        resolve(__dirname.replace("\\src\\controllers", "\\views"), "jobs.html")
+      )
+    );
+  } else {
+    res.sendFile(
+      join(
+        resolve(__dirname.replace("/src/controllers", "/views"), "jobs.html")
+      )
+    );
+  }
 };
 
 export const handlePostJobs = (req: Request, res: Response) => {
@@ -55,33 +81,69 @@ export const handlePostJobs = (req: Request, res: Response) => {
 };
 
 export const handleGetCovid19 = (req: Request, res: Response) => {
-  res.sendFile(
-    join(
-      resolve(__dirname.replace("/src/controllers", "/views"), "covid-19.html")
-    )
-  );
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("\\src\\controllers", "\\views"),
+          "covid-19.html"
+        )
+      )
+    );
+  } else {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("/src/controllers", "/views"),
+          "covid-19.html"
+        )
+      )
+    );
+  }
 };
 
 export const handleGetFacilities = (req: Request, res: Response) => {
-  res.sendFile(
-    join(
-      resolve(
-        __dirname.replace("/src/controllers", "/views"),
-        "facilities.html"
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("\\src\\controllers", "\\views"),
+          "facilities.html"
+        )
       )
-    )
-  );
+    );
+  } else {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("/src/controllers", "/views"),
+          "facilities.html"
+        )
+      )
+    );
+  }
 };
 
 export const handleGetNoticeBoard = (req: Request, res: Response) => {
-  res.sendFile(
-    join(
-      resolve(
-        __dirname.replace("/src/controllers", "/views"),
-        "notice-board.html"
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("\\src\\controllers", "\\views"),
+          "notice-board.html"
+        )
       )
-    )
-  );
+    );
+  } else {
+    res.sendFile(
+      join(
+        resolve(
+          __dirname.replace("/src/controllers", "/views"),
+          "notice-board.html"
+        )
+      )
+    );
+  }
 };
 
 export const handleGetWelcomeUser = (req: Request, res: Response) => {

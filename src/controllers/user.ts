@@ -12,9 +12,19 @@ export interface IBody {
 }
 
 export const handleGetUser = (req: Request, res: Response) => {
-  res.sendFile(
-    join(resolve(__dirname.replace("/src/controllers", "/views"), "jobs.html"))
-  );
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(
+        resolve(__dirname.replace("\\src\\controllers", "\\views"), "jobs.html")
+      )
+    );
+  } else {
+    res.sendFile(
+      join(
+        resolve(__dirname.replace("/src/controllers", "/views"), "jobs.html")
+      )
+    );
+  }
 };
 
 export const handleSignUp = (req: Request, res: Response) => {

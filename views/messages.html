@@ -185,7 +185,8 @@
       <nav class="navbar fixed-bottom navbar-dark bg-dark">
         <div class="container">
           <span class="navbar-text">
-            A  platform to reach out to your neighbours and connect with them. We aim to grow together as one community
+            A platform to reach out to your neighbours and connect with them. We
+            aim to grow together as one community
           </span>
         </div>
       </nav>
@@ -205,11 +206,11 @@
       const tabContent = document.getElementById("tab-content");
       let username = "";
 
-      socket.once("new-chat-message", (msg) => {
+      socket.on("new-chat-message", (msg) => {
         tabContent.innerHTML += msg + "</ br>";
       });
 
-      socket.once("new-user-join", (msg) => {
+      socket.on("new-user-join", (msg) => {
         console.log(msg);
         const tabBtn = document.createElement("button");
         tabBtn.classList.add("tablinks");
@@ -221,7 +222,7 @@
         fetch("/welcomeuser")
           .then((res) => res.json())
           .then((data) => {
-          username = data.name;
+            username = data.name;
             welcomeUser.innerText = `welcome ${data.name}`;
             socket.emit("user-join", data.name);
           })
@@ -236,7 +237,6 @@
           message.value = "";
         }
       });
-
     </script>
   </body>
 </html>

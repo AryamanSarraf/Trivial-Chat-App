@@ -22,13 +22,26 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(join(resolve(__dirname.replace("/src", "/views")))));
+
+if (process.platform === "win32") {
+  app.use(express.static(join(resolve(__dirname.replace("\\src", "\\views")))));
+} else {
+  app.use(express.static(join(resolve(__dirname.replace("/src", "/views")))));
+}
 
 app.use("/", router);
 app.use("/user", userRouter);
 
 app.use((req, res) => {
-  res.sendFile(join(resolve(__dirname.replace("/src", "/views"), "404.html")));
+  if (process.platform === "win32") {
+    res.sendFile(
+      join(resolve(__dirname.replace("\\src", "\\views"), "404.html"))
+    );
+  } else {
+    res.sendFile(
+      join(resolve(__dirname.replace("/src", "/views"), "404.html"))
+    );
+  }
 });
 
 app.use(
@@ -38,9 +51,18 @@ app.use(
     res: express.Response,
     next: express.NextFunction
   ) => {
-    res.sendFile(
-      join(resolve(__dirname.replace("/src", "/views"), "error.html"))
-    );
-    next();
+    if (err) {
+      if (process.platform === "win32") {
+        res.sendFile(
+          join(resolve(__dirname.replace("\\src", "\\views"), "error.html"))
+        );
+      } else {
+        res.sendFile(
+          join(resolve(__dirname.replace("/src", "/views"), "error.html"))
+        );
+      }
+    } else {
+      next();
+    }
   }
 );
