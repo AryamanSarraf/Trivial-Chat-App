@@ -15,7 +15,7 @@ Last but not least, we have the facilities page, and this displays all the **loc
 
 you will `nodejs` and `mongodb` installed in your local machine to run this app.
 
-## run the app
+## Run the app
 
 ```
 git clone https://github.com/AryamanSarraf/Trivial-Chat-App.git
