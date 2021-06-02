@@ -8,7 +8,15 @@ import { connectDB } from "./src/controllers/services/db";
 config({ path: resolve(__dirname + "/.env") });
 const server = createServer(app);
 const port = process.env.PORT || 5000;
-export const io = new Server(server);
+const io = new Server(server);
+io.on("connection", (socket) => {
+  socket.on("user-join", (msg) => {
+    socket.broadcast.emit("new-user-join", msg);
+  });
+  socket.on("chat-message", (msg) => {
+    socket.broadcast.emit("new-chat-message", msg);
+  });
+});
 
 //Connects to the database
 connectDB();
