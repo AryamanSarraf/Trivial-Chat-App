@@ -22,7 +22,7 @@ git clone https://github.com/AryamanSarraf/Trivial-Chat-App.git
 ```
 
 ```
-cd Trivial-chat
+cd Trivial-chat-App
 ```
 
 ```
@@ -36,6 +36,10 @@ npm run dev
 now, open your browser and go to [localhost:5000](http://localhost:5000/)
 
 app should be runing.
+
+## Want to contribute to this project
+
+Read [CODE_OF_CONDUCT.md](https://github.com/AryamanSarraf/Trivial-Chat-App/blob/main/CODE_OF_CONDUCT.md "Read code of conduct") and [CONTRIBUTING.md](https://github.com/AryamanSarraf/Trivial-Chat-App/blob/main/CONTRIBUTING.md "Read contribution guidelines")
 
 ## Contributors ✨
 
