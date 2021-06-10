@@ -3,6 +3,12 @@ import { Patient } from "../modals/patient";
 
 export const patientRouter = Router();
 
+interface IPatient {
+  name: string;
+  age: number;
+  address: string;
+}
+
 patientRouter.get("/", (req, res) => {
   Patient.find((err, patient) => {
     if (err) {
@@ -16,6 +22,24 @@ patientRouter.get("/", (req, res) => {
 });
 
 patientRouter.post("/", (req, res) => {
-  console.log(req.body);
-  res.json({ msg: "ok" });
+  const { name, age, address }: IPatient = req.body;
+  if (
+    !name ||
+    name === "" ||
+    !age ||
+    age === null ||
+    !address ||
+    address === ""
+  ) {
+    console.log("no patient");
+    res.json({ msg: "please fill the form" });
+  } else {
+    const newPatient = new Patient({
+      name,
+      age,
+      address,
+    });
+    console.log(newPatient);
+    res.json({ msg: "ok" });
+  }
 });

@@ -103,8 +103,9 @@
               <div class="modal-header">
                 <h4 class="modal-title">Form</h4>
               </div>
-              <div class="modal-body">
-                <form action="/patient/" method="POST" class="form-horizontal">
+              <div id="patient-modal" class="modal-body">
+                <form id="patientForm" class="form-horizontal">
+                  <div id="message"></div>
                   <div class="form-group">
                     <label class="control-label col-sm-2 fs-5" for="name"
                       >Name</label
@@ -388,6 +389,55 @@
       });
     </script>
 
+    <script>
+      const patientForm = document.getElementById("patientForm");
+      const patientName = document.getElementById("name");
+      const patinetAge = document.getElementById("inputAge");
+      const patientAddress = document.getElementById("inputAddress");
+
+      patientForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        fetch("/patient", {
+          method: "POST",
+          headers: {
+            Accept: "application/json plain/text */*",
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            name: patientName.value,
+            age: patinetAge.value,
+            address: patientAddress.value,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const patientMessage = document.getElementById("message");
+            const myAlert = document.createElement("div");
+            const closeBtn = document.createElement("button");
+            myAlert.classList.add("alert");
+            myAlert.classList.add("alert-dismissible");
+            myAlert.classList.add("fade");
+            myAlert.classList.add("show");
+            closeBtn.setAttribute("data-dismiss", "alert");
+            closeBtn.classList.add("close");
+            if (data.msg === "ok") {
+              myAlert.classList.add("alert-success");
+              myAlert.innerHTML = "patient is created sucessfully";
+            } else {
+              myAlert.classList.add("alert-warning");
+              myAlert.innerHTML = data.msg;
+            }
+            closeBtn.innerHTML = "&times;";
+            myAlert.appendChild(closeBtn);
+            patientMessage.appendChild(myAlert);
+            setTimeout(() => {
+              patientMessage.removeChild(myAlert);
+            }, 5000);
+          })
+          .catch((err) => console.log(err));
+      });
+    </script>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -395,4 +445,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
