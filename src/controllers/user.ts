@@ -30,6 +30,7 @@ export const handleGetUser = (req: Request, res: Response) => {
 export const handleSignUp = (req: Request, res: Response) => {
   const { name, username, password, email, confirmPassword }: IBody = req.body;
   const newUser = new MyUser(name, username, email, password, confirmPassword);
+  console.log(newUser);
   if (newUser.validate() === "valid user") {
     newUser.save();
     res.send(`

@@ -1,301 +1,398 @@
-<!DOCTYPE html>   
-<html lang="en">   
-<head>   
-<meta charset="utf-8">   
-<title>Trivial Chat</title>   
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Trivial Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="style.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
 
-<style>
-body {
-    background-color: #CCEAFF;
-} 
-</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-</head>  
+    <style>
+      body {
+        background-color: #cceaff;
+      }
+    </style>
+  </head>
 
-<body>  
-  <img class="logo" src="logo.png">
-<div class="site-mobile-menu site-navbar-target">
+  <body>
+    <img class="logo" src="logo.png" />
+    <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
-       <div class="site-mobile-menu-close mt-3">
-        <span class="icon-close2 js-menu-toggle"></span>
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
         </div>
-       </div>
+      </div>
       <div class="site-mobile-menu-body"></div>
     </div>
 
-
-
-      <header class="site-navbar site-navbar-target py-4" role="banner">
-        <div class="container">
-          <div class="row align-items-center position-relative">
-            <!--<div class="col-3 ml-auto text-center order-2">
+    <header class="site-navbar site-navbar-target py-4" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          <!--<div class="col-3 ml-auto text-center order-2">
               <div class="site-logo">
                 <a href="index.html" class="font-weight-bold text-black">TRIVIA CHAT</a>
               </div>
             </div>-->
-            <div class="col-9 order-1 text-left mr-auto">              
-              <span class="d-inline-block d-lg-block"><a href="#" class="text-light site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-dark"></span></a></span>
-              <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li ><a href="./messages.html" class="nav-link">Messages</a></li>
-                  <li><a href="./news.html" class="nav-link">News</a></li>
-                  <li class="active"><a href="./covid-19.html#" class="nav-link">Covid-19</a></li>
-                  <li><a href="./jobs.html#" class="nav-link">Jobs</a></li>
-                  <li><a href="./facilities.html#" class="nav-link">Facilities</a></li>
-                </ul>
-              </nav>
-            </div> 
+          <div class="col-9 order-1 text-left mr-auto">
+            <span class="d-inline-block d-lg-block"
+              ><a
+                href="#"
+                class="text-light site-menu-toggle js-menu-toggle py-5"
+                ><span class="icon-menu h3 text-dark"></span></a
+            ></span>
+            <nav
+              class="site-navigation text-right ml-auto d-none d-lg-none"
+              role="navigation"
+            >
+              <ul class="site-menu main-menu js-clone-nav ml-auto">
+                <li><a href="./messages.html" class="nav-link">Messages</a></li>
+                <li><a href="./news.html" class="nav-link">News</a></li>
+                <li class="active">
+                  <a href="./covid-19.html#" class="nav-link">Covid-19</a>
+                </li>
+                <li><a href="./jobs.html#" class="nav-link">Jobs</a></li>
+                <li>
+                  <a href="./facilities.html#" class="nav-link">Facilities</a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
     <!--<div class="hero" style="background-image: url('images/hero_1.jpg');"></div>-->
-  
 
-<main>
-  
-<div class="container">
-<h4 class="pb-2" >PEOPLE DIAGNOSED WITH COVID-19</h4>
+    <main>
+      <div class="container">
+        <h4 class="pb-2">PEOPLE DIAGNOSED WITH COVID-19</h4>
 
-<!---------------FORM BUTTON STARTS HERE--------------------->
+        <!---------------FORM BUTTON STARTS HERE--------------------->
 
-<button type="button" class="btn btn-info btn-lg float-end mb-3" data-toggle="modal" data-target="#myModal">Fill Up Your Form</button>
+        <button
+          type="button"
+          class="btn btn-info btn-lg float-end mb-3"
+          data-toggle="modal"
+          data-target="#myModal"
+        >
+          Fill Up Your Form
+        </button>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Form</h4>
-      </div>
-      <div class="modal-body">
-       
-        <form class="form-horizontal">
-          <div class="form-group">
-            <label class="control-label col-sm-2 fs-5" for="name">Name</label>
-            <div class="col-sm-10">
-              <input type="name" class="form-control" id="name" placeholder="Enter Your Name">
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Form</h4>
+              </div>
+              <div class="modal-body">
+                <form action="/patient/" method="POST" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-sm-2 fs-5" for="name"
+                      >Name</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="name"
+                        name="name"
+                        class="form-control"
+                        id="name"
+                        placeholder="Enter Your Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAge" class="control-label col-sm-5 fs-5"
+                      >Enter Your Age</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="age"
+                        id="inputAge"
+                        placeholder="Enter Your Age"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="inputAddress"
+                      class="control-label col-sm-2 fs-5"
+                      >Address</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="text"
+                        name="address"
+                        class="form-control"
+                        id="inputAddress"
+                        placeholder="Enter Your Address"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="inputAge" class="control-label col-sm-5 fs-5">Enter Your Age</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputAge" placeholder="Enter Your Age">
+        </div>
+
+        <!---------------FORM BUTTON ENDS HERE------------------------>
+
+        <input
+          class="form-control my-2"
+          id="myInput1"
+          type="text"
+          placeholder="Search..."
+          style="width: 200px"
+        />
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Address</th>
+            </tr>
+          </thead>
+          <tbody id="myTable1">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark otto</td>
+              <td>25</td>
+              <td>House 19 D-Block</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>52</td>
+              <td>House 17 B-Block</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry Gird</td>
+              <td>45</td>
+              <td>Apt.5 Lane - 18</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Adam Owens</td>
+              <td>26</td>
+              <td>House 10 C-Block</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Jerry Gray</td>
+              <td>37</td>
+              <td>Apt.6 Lane - 15</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="pt-5 pb-2">NEEDS OF COVID PATIENTS UNDER QUARANTINE</h4>
+
+        <!---------------FORM BUTTON STARTS HERE--------------------->
+
+        <button
+          type="button"
+          class="btn btn-info btn-lg float-end mb-3"
+          data-toggle="modal"
+          data-target="#myModal2"
+        >
+          Fill Up Your Form
+        </button>
+
+        <!-- Modal -->
+        <div id="myModal2" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Form</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-sm-2 fs-5" for="name"
+                      >Name</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="name"
+                        class="form-control"
+                        id="name"
+                        placeholder="Enter Your Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAge" class="control-label col-sm-5 fs-5"
+                      >Requirements</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputAge"
+                        placeholder="Enter Your Requirements"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="inputAddress"
+                      class="control-label col-sm-2 fs-5"
+                      >Address</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputAddress"
+                        placeholder="Enter Your Address"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-success"
+                  data-dismiss="modal"
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="inputAddress" class="control-label col-sm-2 fs-5">Address</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputAddress" placeholder="Enter Your Address">
-          </div>
-          </div>
-        </form>
+        </div>
+
+        <!---------------FORM BUTTON ENDS HERE--------------------->
+
+        <input
+          class="form-control my-2"
+          id="myInput2"
+          type="text"
+          placeholder="Search..."
+          style="width: 200px"
+        />
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Requirements</th>
+              <th scope="col">Address</th>
+            </tr>
+          </thead>
+          <tbody id="myTable2">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark otto</td>
+              <td>I need Vitamin D Tablets</td>
+              <td>House 19 D-Block</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Larry Gird</td>
+              <td>Food Oil and garbage bags pls</td>
+              <td>Apt.5 Lane - 18</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Johnny Ferguson</td>
+              <td>Toilet Paper</td>
+              <td>Apt.3 Lane - 10</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Trey Griffon</td>
+              <td>Eggs and Bread</td>
+              <td>House 12 E-Block</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Suleiman Najim</td>
+              <td>Notebooks and pens</td>
+              <td>Apt.2 Lane - 11</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
-      </div>
-    </div>
+    </main>
 
-  </div>
-</div>
+    <footer>
+      <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <div class="container">
+          <span class="navbar-text">
+            A platform to reach out to your neighbours and connect with them. We
+            aim to grow together as one community
+          </span>
+        </div>
+      </nav>
+    </footer>
 
-<!---------------FORM BUTTON ENDS HERE------------------------>
+    <script>
+      $(document).ready(function () {
+        $("#myInput1").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $("#myTable1 tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+          });
+        });
+      });
+    </script>
 
-<input class="form-control my-2" id="myInput1" type="text" placeholder="Search..." style="width: 200px;">
-<table class="table table-hover table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Age</th>
-      <th scope="col">Address</th>
-    </tr>
-  </thead>
-  <tbody id="myTable1">
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark otto</td>
-      <td>25</td>
-      <td>House 19 D-Block</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>52</td>
-      <td>House 17 B-Block</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry Gird</td>
-      <td>45</td>
-      <td>Apt.5 Lane - 18</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Adam Owens</td>
-      <td>26</td>
-      <td>House 10 C-Block</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Jerry Gray</td>
-      <td>37</td>
-      <td>Apt.6 Lane - 15</td>
-    </tr>
-  </tbody>
-</table>
+    <script>
+      $(document).ready(function () {
+        $("#myInput2").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $("#myTable2 tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+          });
+        });
+      });
+    </script>
 
-<h4 class="pt-5 pb-2">NEEDS OF COVID PATIENTS UNDER QUARANTINE</h4>
-
-<!---------------FORM BUTTON STARTS HERE--------------------->
-
-<button type="button" class="btn btn-info btn-lg float-end mb-3" data-toggle="modal" data-target="#myModal2">Fill Up Your Form</button>
-
-<!-- Modal -->
-<div id="myModal2" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Form</h4>
-      </div>
-      <div class="modal-body">
-       
-        <form class="form-horizontal">
-          <div class="form-group">
-            <label class="control-label col-sm-2 fs-5" for="name">Name</label>
-            <div class="col-sm-10">
-              <input type="name" class="form-control" id="name" placeholder="Enter Your Name">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputAge" class="control-label col-sm-5 fs-5">Requirements</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputAge" placeholder="Enter Your Requirements">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress" class="control-label col-sm-2 fs-5">Address</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputAddress" placeholder="Enter Your Address">
-          </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!---------------FORM BUTTON ENDS HERE--------------------->
-
-<input class="form-control my-2" id="myInput2" type="text" placeholder="Search..." style="width: 200px;">
-<table class="table table-hover table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Requirements</th>
-      <th scope="col">Address</th>
-    </tr>
-  </thead>
-  <tbody id="myTable2">
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark otto</td>
-      <td>I need Vitamin D Tablets</td>
-      <td>House 19 D-Block</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Larry Gird</td>
-      <td>Food Oil and garbage bags pls</td>
-      <td>Apt.5 Lane - 18</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Johnny Ferguson</td>
-      <td>Toilet Paper</td>
-      <td>Apt.3 Lane - 10</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Trey Griffon</td>
-      <td>Eggs and Bread</td>
-      <td>House 12 E-Block</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Suleiman Najim</td>
-      <td>Notebooks and pens</td>
-      <td>Apt.2 Lane - 11</td>
-    </tr>
-  </tbody>
-</table>
-
-</div>
-
-</main>
-
-<footer>
-<nav class="navbar fixed-bottom navbar-dark bg-dark">
-  <div class="container">
-    <span class="navbar-text">
-      A  platform to reach out to your neighbours and connect with them. We aim to grow together as one community
-    </span>
-  </div>
-</nav>
-</footer>
-
-
-<script>
-$(document).ready(function(){
-  $("#myInput1").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable1 tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#myInput2").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable2 tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-
-<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/main.js"></script>
+  </body>
+</html>
 
-
-</body>  
-
-</html>  

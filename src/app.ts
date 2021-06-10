@@ -4,6 +4,7 @@ import passport from "passport";
 import { resolve, join } from "path";
 import { router } from "./routes/index";
 import { userRouter } from "./routes/user";
+import { patientRouter } from "./routes/patient";
 import { myPassport } from "./controllers/services/passport";
 
 export const app = express();
@@ -25,12 +26,25 @@ app.use(express.json());
 
 if (process.platform === "win32") {
   app.use(express.static(join(resolve(__dirname.replace("\\src", "\\views")))));
+  app.use(
+    express.static(
+      join(
+        resolve(__dirname.replace("\\src", "\\node_modules\\bootstrap\\dist"))
+      )
+    )
+  );
 } else {
   app.use(express.static(join(resolve(__dirname.replace("/src", "/views")))));
+  app.use(
+    express.static(
+      join(resolve(__dirname.replace("/src", "/node_modules/bootstrap/dist")))
+    )
+  );
 }
 
 app.use("/", router);
 app.use("/user", userRouter);
+app.use("/patient", patientRouter);
 
 app.use((req, res) => {
   if (process.platform === "win32") {

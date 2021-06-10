@@ -1,5 +1,10 @@
-import {Router} from "express";
-import {handleGetUser, handleSignUp, handleSignIn, handleGetLogOut} from "../controllers/user";
+import { Router } from "express";
+import {
+  handleGetUser,
+  handleSignUp,
+  handleSignIn,
+  handleGetLogOut,
+} from "../controllers/user";
 
 export const userRouter = Router();
 

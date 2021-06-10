@@ -4,3 +4,4 @@
 /**/*.min.js
 /**/*.html.js
 /**/views
+/**/dist
