@@ -39,7 +39,7 @@ patientRouter.post("/", (req, res) => {
       age,
       address,
     });
-    console.log(newPatient);
+    newPatient.save();
     res.json({ msg: "ok" });
   }
 });

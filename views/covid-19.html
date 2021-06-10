@@ -115,7 +115,7 @@
                         type="name"
                         name="name"
                         class="form-control"
-                        id="name"
+                        id="patientName"
                         placeholder="Enter Your Name"
                       />
                     </div>
@@ -129,7 +129,7 @@
                         type="number"
                         class="form-control"
                         name="age"
-                        id="inputAge"
+                        id="patinetAge"
                         placeholder="Enter Your Age"
                       />
                     </div>
@@ -145,7 +145,7 @@
                         type="text"
                         name="address"
                         class="form-control"
-                        id="inputAddress"
+                        id="patientAddress"
                         placeholder="Enter Your Address"
                       />
                     </div>
@@ -182,38 +182,7 @@
               <th scope="col">Address</th>
             </tr>
           </thead>
-          <tbody id="myTable1">
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark otto</td>
-              <td>25</td>
-              <td>House 19 D-Block</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>52</td>
-              <td>House 17 B-Block</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry Gird</td>
-              <td>45</td>
-              <td>Apt.5 Lane - 18</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Adam Owens</td>
-              <td>26</td>
-              <td>House 10 C-Block</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Jerry Gray</td>
-              <td>37</td>
-              <td>Apt.6 Lane - 15</td>
-            </tr>
-          </tbody>
+          <tbody id="myTable1"></tbody>
         </table>
 
         <h4 class="pt-5 pb-2">NEEDS OF COVID PATIENTS UNDER QUARANTINE</h4>
@@ -320,38 +289,7 @@
               <th scope="col">Address</th>
             </tr>
           </thead>
-          <tbody id="myTable2">
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark otto</td>
-              <td>I need Vitamin D Tablets</td>
-              <td>House 19 D-Block</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Larry Gird</td>
-              <td>Food Oil and garbage bags pls</td>
-              <td>Apt.5 Lane - 18</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Johnny Ferguson</td>
-              <td>Toilet Paper</td>
-              <td>Apt.3 Lane - 10</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Trey Griffon</td>
-              <td>Eggs and Bread</td>
-              <td>House 12 E-Block</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Suleiman Najim</td>
-              <td>Notebooks and pens</td>
-              <td>Apt.2 Lane - 11</td>
-            </tr>
-          </tbody>
+          <tbody id="myTable2"></tbody>
         </table>
       </div>
     </main>
@@ -391,9 +329,30 @@
 
     <script>
       const patientForm = document.getElementById("patientForm");
-      const patientName = document.getElementById("name");
-      const patinetAge = document.getElementById("inputAge");
-      const patientAddress = document.getElementById("inputAddress");
+      const patientName = document.getElementById("patientName");
+      const patinetAge = document.getElementById("patinetAge");
+      const patientAddress = document.getElementById("patientAddress");
+      const patientTable = document.getElementById("myTable1");
+
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/patient")
+          .then((res) => res.json())
+          .then((data) => {
+            let output = "";
+            data.map(({ name, age, address }, idx) => {
+              output += `
+            <tr>
+              <th scope="row">${idx + 1}</th>
+              <td>${name}</td>
+              <td>${age}</td>
+              <td>${address}</td>
+            </tr>
+                  `;
+            });
+            patientTable.innerHTML = output;
+          })
+          .catch((err) => console.log(err));
+      });
 
       patientForm.addEventListener("submit", function (e) {
         e.preventDefault();
