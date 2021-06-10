@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { Patient } from "../modals/patient";
+import { quarantinePatient } from "../modals/quarantine";
 
-export const patientRouter = Router();
+export const quarantineRouter = Router();
 
 interface IPatient {
   name: string;
-  age: number;
+  requirenment: string;
   address: string;
 }
 
-patientRouter.get("/", (req, res) => {
-  Patient.find((err, patient) => {
+quarantineRouter.get("/", (req, res) => {
+  quarantinePatient.find((err, patient) => {
     if (err) {
       res.json({ msg: "no patient found" });
     } else if (patient) {
@@ -21,21 +21,21 @@ patientRouter.get("/", (req, res) => {
   });
 });
 
-patientRouter.post("/", (req, res) => {
-  const { name, age, address }: IPatient = req.body;
+quarantineRouter.post("/", (req, res) => {
+  const { name, requirenment, address }: IPatient = req.body;
   if (
     !name ||
     name === "" ||
-    !age ||
-    age === null ||
+    !requirenment ||
+    requirenment === null ||
     !address ||
     address === ""
   ) {
     res.json({ msg: "please fill the form" });
   } else {
-    const newPatient = new Patient({
+    const newPatient = new quarantinePatient({
       name,
-      age,
+      requirenment,
       address,
     });
     newPatient.save();

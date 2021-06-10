@@ -207,16 +207,17 @@
                 <h4 class="modal-title">Form</h4>
               </div>
               <div class="modal-body">
-                <form class="form-horizontal">
+                <form id="quarantinePatientForm" class="form-horizontal">
+                  <div id="qurantine-message"></div>
                   <div class="form-group">
                     <label class="control-label col-sm-2 fs-5" for="name"
                       >Name</label
                     >
                     <div class="col-sm-10">
                       <input
-                        type="name"
+                        type="text"
                         class="form-control"
-                        id="name"
+                        id="quarantinePatientName"
                         placeholder="Enter Your Name"
                       />
                     </div>
@@ -229,7 +230,7 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="inputAge"
+                        id="quarantinePatientRequirnments"
                         placeholder="Enter Your Requirements"
                       />
                     </div>
@@ -244,28 +245,24 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="inputAddress"
+                        id="quarantinePatientAddress"
                         placeholder="Enter Your Address"
                       />
                     </div>
                   </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                      Submit
+                    </button>
+                  </div>
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="submit"
-                  class="btn btn-success"
-                  data-dismiss="modal"
-                >
-                  Submit
-                </button>
               </div>
             </div>
           </div>
@@ -333,6 +330,17 @@
       const patinetAge = document.getElementById("patinetAge");
       const patientAddress = document.getElementById("patientAddress");
       const patientTable = document.getElementById("myTable1");
+      const quarantineForm = document.getElementById("quarantinePatientForm");
+      const quarantinePatientName = document.getElementById(
+        "quarantinePatientName"
+      );
+      const quarantineAge = document.getElementById(
+        "quarantinePatientRequirnments"
+      );
+      const quarantinePatientAddress = document.getElementById(
+        "quarantinePatientAddress"
+      );
+      const quarantineTable = document.getElementById("myTable2");
 
       document.addEventListener("DOMContentLoaded", function () {
         fetch("/patient")
@@ -350,6 +358,66 @@
                   `;
             });
             patientTable.innerHTML = output;
+          })
+          .catch((err) => console.log(err));
+
+        fetch("/quarantine")
+          .then((res) => res.json())
+          .then((data) => {
+            let output = "";
+            data.map(({ name, requirenment, address }, idx) => {
+              output += `
+            <tr>
+              <th scope="row">${idx + 1}</th>
+              <td>${name}</td>
+              <td>${requirenment}</td>
+              <td>${address}</td>
+            </tr>
+                  `;
+            });
+            quarantineTable.innerHTML = output;
+          })
+          .catch((err) => console.log(err));
+      });
+
+      quarantineForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        fetch("/quarantine", {
+          method: "POST",
+          headers: {
+            Accept: "application/json plain/text */*",
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            name: quarantinePatientName.value,
+            requirenment: quarantinePatientRequirnments.value,
+            address: quarantinePatientAddress.value,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const patientMessage = document.getElementById("qurantine-message");
+            const myAlert = document.createElement("div");
+            const closeBtn = document.createElement("button");
+            myAlert.classList.add("alert");
+            myAlert.classList.add("alert-dismissible");
+            myAlert.classList.add("fade");
+            myAlert.classList.add("show");
+            closeBtn.setAttribute("data-dismiss", "alert");
+            closeBtn.classList.add("close");
+            if (data.msg === "ok") {
+              myAlert.classList.add("alert-success");
+              myAlert.innerHTML = "patient is created sucessfully";
+            } else {
+              myAlert.classList.add("alert-warning");
+              myAlert.innerHTML = data.msg;
+            }
+            closeBtn.innerHTML = "&times;";
+            myAlert.appendChild(closeBtn);
+            patientMessage.appendChild(myAlert);
+            setTimeout(() => {
+              patientMessage.removeChild(myAlert);
+            }, 5000);
           })
           .catch((err) => console.log(err));
       });

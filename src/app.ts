@@ -5,6 +5,7 @@ import { resolve, join } from "path";
 import { router } from "./routes/index";
 import { userRouter } from "./routes/user";
 import { patientRouter } from "./routes/patient";
+import { quarantineRouter } from "./routes/qurantine";
 import { myPassport } from "./controllers/services/passport";
 
 export const app = express();
@@ -45,6 +46,7 @@ if (process.platform === "win32") {
 app.use("/", router);
 app.use("/user", userRouter);
 app.use("/patient", patientRouter);
+app.use("/quarantine", quarantineRouter);
 
 app.use((req, res) => {
   if (process.platform === "win32") {
